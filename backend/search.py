@@ -183,7 +183,7 @@ def search(
     '''
 
     response = client.search(request)
-    print("~ Original response:\n",response)
+    # print("~ Original response:\n",response)
 
     formatted_results = []
     results = response.results
