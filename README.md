@@ -2,12 +2,13 @@
 
 A [Vertex AI Search](https://cloud.google.com/generative-ai-app-builder?hl=en) Demo
 - Try it here -> https://www.cymbalsearch.com 
-- Project details and bug sheet -> [go/cymbalsearch](https://docs.google.com/spreadsheets/d/1DrLq4csxe5kYvtIJh9u-iBsxmbU-5-qsO5Urcs-Pn7M/edit?usp=sharing)
+- Project details, Demo videos and Bug sheet -> [go/cymbalsearch](https://docs.google.com/spreadsheets/d/1DrLq4csxe5kYvtIJh9u-iBsxmbU-5-qsO5Urcs-Pn7M/edit?usp=sharing)
 - Request access -> [go/cymbalsearch-access](https://docs.google.com/forms/d/e/1FAIpQLSclhuXJ0yo9YE5awoCabEzJsP-YiIdtNZWrAKakUlhCJ-bgPg/viewform?resourcekey=0-Ft_mLVvMk5Qgicu-ZGXv1g)
 
 Disclaimer: This is _NOT_ an official Google project.
 
 Created by elroylbj@
+
 
 ## Table of Contents
 

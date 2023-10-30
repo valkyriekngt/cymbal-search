@@ -162,15 +162,9 @@ const DataImportURL = ({engine, isRefresh, setIsRefresh}) => {
     try {
       setIsPDF(true);
       setIsConverting(true);
-      console.log("url: ", url);
+      console.log("Convert url: ", url);
   
-      const timeoutPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          reject(new Error("Request timed out"));
-        }, 30000); // Timeout after 15 seconds
-      });
-  
-      const apiRequestPromise = fetch(`${config.LOCALHOST}/convert`, {
+      const response = await fetch(`${config.LOCALHOST}/convert`, {
         timeout: 30000,
         method: "POST",
         headers: {
@@ -178,8 +172,6 @@ const DataImportURL = ({engine, isRefresh, setIsRefresh}) => {
         },
         body: JSON.stringify({ url: url }),
       });
-  
-      const response = await Promise.race([apiRequestPromise, timeoutPromise]);
   
       if (!response.ok) {
         setFileError("Failed to convert the URL to PDF. Please try again.");

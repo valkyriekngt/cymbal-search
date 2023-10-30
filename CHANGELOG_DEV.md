@@ -1,5 +1,9 @@
 # CHANGELOG_DEV.md
 
+## 1.5.3 (30 Oct 2023)
+### Bug fixes
+- Fix Import using CSV and JSON -> Current Commit
+
 ## 1.5.2 (19 Oct 2023)
 ### Features
 - Added {{summary}} in prompt editor -> [3370466](https://github.com/gitteroy/cymbalsearch/commit/3370466370854ee58a1537e6be1532b612ecb1ad)
