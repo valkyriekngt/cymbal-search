@@ -1,14 +1,24 @@
 # Cymbal Search
 
-A [Vertex AI Search](https://cloud.google.com/generative-ai-app-builder?hl=en) Demo
+### A [Vertex AI Search](https://cloud.google.com/generative-ai-app-builder?hl=en) Demo
 - Try it here -> https://www.cymbalsearch.com 
-- Project details, Demo videos and Bug sheet -> [go/cymbalsearch](https://docs.google.com/spreadsheets/d/1DrLq4csxe5kYvtIJh9u-iBsxmbU-5-qsO5Urcs-Pn7M/edit?usp=sharing)
-- Request access -> [go/cymbalsearch-access](https://docs.google.com/forms/d/e/1FAIpQLSclhuXJ0yo9YE5awoCabEzJsP-YiIdtNZWrAKakUlhCJ-bgPg/viewform?resourcekey=0-Ft_mLVvMk5Qgicu-ZGXv1g)
+- Bug sheet -> [go/cymbalsearch](https://docs.google.com/spreadsheets/d/1DrLq4csxe5kYvtIJh9u-iBsxmbU-5-qsO5Urcs-Pn7M/edit?usp=sharing)
+
+<!-- <figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
+    <source src="Search.webm" type="video/webm">
+  </video>
+</figure> -->
+
+### Video Walkthrough
+Speed up 1.5x for optimal experience:
+* [Search](https://www.youtube.com/watch?v=9uqgSKSuYFc)
+* [Datastore](https://youtu.be/yykBUVQjQLs)
+* [Multi-turn](https://youtu.be/nWrdlTJxn98)
 
 Disclaimer: This is _NOT_ an official Google project.
 
 Created by elroylbj@
-
 
 ## Table of Contents
 
@@ -17,8 +27,8 @@ Created by elroylbj@
   - [Google Cloud Project](#1-google-cloud-project)
   - [Vertex AI Search App](#2-vertex-ai-search-app)
   - [Google Cloud Storage](#3-google-cloud-storage)
-- [Deployment](#deployment-instructions)
-- [Development](#local-development)
+- [Deploy to Cloud Run or App Engine](#deployment-instructions)
+- [Local Development](#local-development)
 
 
 ## Software Architecture Diagram
@@ -125,7 +135,7 @@ The `deploy.sh` script does the following:
 
 Visit the [Artifact Registry console](https://console.cloud.google.com/artifacts) to view your Docker image. It will take around 10 minutes for the build to complete.
 
-### 4. Deploy your app on either App Engine or Cloud Run.
+### 4. Deploy your app on either Cloud Run or App Engine.
 
 #### Option 1: [Cloud Run](https://cloud.google.com/run/docs/building/containers#building_using_a_dockerfile)
 1. If you are running in an Argolis Project, overwrite the Organization Policy as seen [here](https://docs.google.com/document/d/1hkaIOJLsmOqpodfJ7o-sFYcgCqv4u3FdiSotdW-udhE/edit#heading=h.drhib175f9p4) to be able to `unauthenticated invocations`.
@@ -139,11 +149,7 @@ Visit the [Artifact Registry console](https://console.cloud.google.com/artifacts
         --set-env-vars=PROJECT_ID=$PROJECT_ID,BUCKET_FOR_UPLOAD=$BUCKET_FOR_UPLOAD,ENGINE_1=$ENGINE_1,MODEL_1=$MODEL_1,MODEL_2=$MODEL_2
     ```
 
-1. [OPTIONAL] Follow [this document](https://cloud.google.com/load-balancing/docs/https/setting-up-https-serverless) to set up External Application Load Balancer with the Cloud Run service.
-
-1. [OPTIONAL] Follow [this document](https://cloud.google.com/iap/docs/enabling-cloud-run) to enable Cloud IAP for Cloud Run behind an application load balancer to control access to the app.
-
-<!-- #### Option 2: [App Engine](https://cloud.google.com/artifact-registry/docs/integrate-app-engine#deploy) -->
+#### Option 2: [App Engine](https://cloud.google.com/artifact-registry/docs/integrate-app-engine#deploy)
 
 1. Create a `app.yaml` file at the project root where the Dockerfile is located. See [yaml reference](https://cloud.google.com/appengine/docs/flexible/reference/app-yaml?tab=python) for more configurations.
     ```
@@ -157,6 +163,10 @@ Visit the [Artifact Registry console](https://console.cloud.google.com/artifacts
         MODEL_2: $MODEL_2
     " > app.yaml
     ```
+    Check that your env variables are reflected in the app.yaml:
+    ```
+    cat app.yaml
+    ```
 1. To deploy the app, run the following command from the directory where your app.yaml and Dockerfile are located:
     ```
     gcloud app deploy --image-url=$REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$TAG
@@ -165,8 +175,8 @@ Visit the [Artifact Registry console](https://console.cloud.google.com/artifacts
     ```
     gcloud app browse
     ```
-1. If there are any permission errors, check which Service Account your app engine is using (likely App Engine default service account with Editor role). \
-Go to the [IAM page](https://console.cloud.google.com/iam-admin/) at console to ensure the Service Account has the following roles:
+* If there are any permission errors, check which Service Account your app engine is using (likely App Engine default service account with Editor role). \
+Go to the [IAM page](https://console.cloud.google.com/iam-admin/) at console to ensure the Service Account has the following roles (for convenience, Editor role will solve the issue):
     1. Discovery Engine Admin
     1. Logs Writer
     1. Storage Object User
@@ -174,7 +184,7 @@ Go to the [IAM page](https://console.cloud.google.com/iam-admin/) at console to 
 
 ## Local Development
 
-All commands should be run at project root directory.
+All commands should be run at project root directory. 
 
 1. Download required software and set to PATH.
     - Download [Python](https://www.python.org/downloads/) (3.11.4)
@@ -234,3 +244,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Author
+
+Created by [elroylbj@](https://www.linkedin.com/in/elroylbj/)
+
+Disclaimer: This is _NOT_ an official Google project.
+
