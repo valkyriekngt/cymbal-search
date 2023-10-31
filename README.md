@@ -1,7 +1,7 @@
 # Cymbal Search
 
 ### A [Vertex AI Search](https://cloud.google.com/generative-ai-app-builder?hl=en) Demo
-- Try it here -> https://www.cymbalsearch.com 
+- Try it here -> https://www.cymbalsearch.com (Controlled access)
 - Bug sheet -> [go/cymbalsearch](https://docs.google.com/spreadsheets/d/1DrLq4csxe5kYvtIJh9u-iBsxmbU-5-qsO5Urcs-Pn7M/edit?usp=sharing)
 
 <!-- <figure class="video_container">
@@ -11,6 +11,8 @@
 </figure> -->
 
 ### Video Walkthrough
+![alt text](public/CybalSearchScreenshot-1.png)
+
 Speed up 1.5x for optimal experience:
 * [Search](https://www.youtube.com/watch?v=9uqgSKSuYFc)
 * [Datastore](https://youtu.be/yykBUVQjQLs)
