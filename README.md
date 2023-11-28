@@ -2,7 +2,6 @@
 
 ### A [Vertex AI Search](https://cloud.google.com/generative-ai-app-builder?hl=en) Demo
 - Try it here -> https://www.cymbalsearch.com (Controlled access)
-- Bug sheet -> [go/cymbalsearch](https://docs.google.com/spreadsheets/d/1DrLq4csxe5kYvtIJh9u-iBsxmbU-5-qsO5Urcs-Pn7M/edit?usp=sharing)
 
 <!-- <figure class="video_container">
   <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
